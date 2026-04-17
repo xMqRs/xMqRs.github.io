@@ -24,8 +24,8 @@ body.dark .link{color:#aaa}
 
 /* icones do Discord e portfólio */
 .icon{width:16px;height:16px;display:inline-block}
-.icon svg{width:100%;height:100%;fill:#000}
-body.dark .icon svg{fill:#fff}
+.icon svg{width:100%;height:100%;color:#000}
+body.dark .icon svg{color:#fff}
 
 /* aumentar o tamanho do icone do sol e da lua */
 #themeIcon{
@@ -75,17 +75,11 @@ body.dark .back{color:#7af}
 
 // icones do tema claro e oscuro
 const sunIcon = `
-<svg viewBox="0 0 24 24">
-  <circle cx="12" cy="12" r="4"/>
-  <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
 `;
 
 const moonIcon = `
-<svg viewBox="0 0 24 24">
-  <path d="M21 12.79A9 9 0 0 1 11.21 3 
-  7 7 0 1 0 21 12.79z"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon-icon lucide-moon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
 `;
 
 // meus posts
