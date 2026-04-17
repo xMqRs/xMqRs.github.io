@@ -1,3 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#XCriaUmSite</title>
+<style>
+body{font-family:Arial;max-width:700px;margin:20px auto;padding:10px;background:#fff;color:#000;transition:0.2s}
+body.dark{background:#111;color:#eee}
+h1{font-size:22px}
+nav{margin-bottom:15px;display:flex;justify-content:space-between;align-items:center}
+nav button{cursor:pointer;background:none;border:none;padding:6px}
+
+/* avatar e perfil */
+.intro{display:flex;gap:15px;align-items:flex-start;margin-bottom:20px}
+.profile-img{width:150px;border-radius:6px}
+.intro-content{flex:1}
+.intro-title{font-size:20px;font-weight:bold;margin-bottom:8px}
+.intro-text{font-size:14px;color:#555;margin-bottom:10px}
+body.dark .intro-text{color:#aaa}
+.links{display:flex;flex-direction:column;gap:6px}
+.link{display:flex;align-items:center;gap:8px;font-size:13px;color:#555;text-decoration:none}
+body.dark .link{color:#aaa}
+
+/* icones do Discord e portfólio */
+.icon{width:16px;height:16px;display:inline-block}
+.icon svg{width:100%;height:100%;fill:#000}
+body.dark .icon svg{fill:#fff}
+
+/* aumentar o tamanho do icone do sol e da lua */
+#themeIcon{
+  width:26px;
+  height:26px;
+  display:inline-block;
+}
+#themeIcon svg{
+  width:100%;
+  height:100%;
+  fill:#000;
+}
+body.dark #themeIcon svg{
+  fill:#fff;
+}
+
+.separator{border:none;border-top:1px solid #ccc;margin:20px 0}
+body.dark .separator{border-color:#444}
+
+.section-title{font-size:18px;margin-bottom:10px}
+
+.post{border-bottom:1px solid #ccc;margin-bottom:15px;padding-bottom:10px}
+body.dark .post{border-color:#444}
+.post-title{font-size:18px;font-weight:bold;cursor:pointer;color:#06c}
+body.dark .post-title{color:#7af}
+.post-date{font-size:12px;color:#777}
+body.dark .post-date{color:#aaa}
+.back{cursor:pointer;color:#06c;font-size:13px}
+body.dark .back{color:#7af}
+</style>
+</head>
+<body>
+
+<h1 onclick="goHome()" style="cursor:pointer">#XCriaUmSite</h1>
+
+<nav>
+  <div></div>
+  <button onclick="toggleDark()">
+    <span id="themeIcon"></span>
+  </button>
+</nav>
+
+<div id="home"></div>
+<div id="post" style="display:none"></div>
+
+<script>
+
+// icones do tema claro e oscuro
+const sunIcon = `
+<svg viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="4"/>
+  <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+</svg>
+`;
+
+const moonIcon = `
+<svg viewBox="0 0 24 24">
+  <path d="M21 12.79A9 9 0 0 1 11.21 3 
+  7 7 0 1 0 21 12.79z"/>
+</svg>
+`;
+
+// meus posts
+const posts = [
+  {
+    id: "projetos",
+    title: "Projetos",
+    date: "17 de Abril · Mais recente",
+    content: `
+      <p>Uma coisa que eu percebi ao criar diversos projetos no Discord, seja bots, comunidades, servidores ou empresas, que a originalidade e a palavra que eu gosto muito de usar: a inovação entram muito em jogo, ou você cria algo que todos sabem o que é e tem a certeza que vai crescer ou você cria algo que ninguém espera e fica com a dúvida se realmente aquilo vai dar certo<p>
+      <p>eu sempre vi no Discord que pessoas optam por abrir servidores de temas que estão por assim dizer "superexplodidos" (nem sei se isso é uma palavra mas enfim), temas que todos usam: interação, jogos, anime etc etc etc, não que seja ruim, não que seja um mal tema, mas a falta da originalidade é o que deixa esses servidores iguais a todos<p>
+      <p>"ah, mas o meu tem...", como um novo membro vai saber se por exemplo, é melhor que o servidor do fulano que tem 2.000 mil membros? O meu ponto é, que você tem que sair desse caminho, pode parecer bobo, pode parecer exagerado ou sem sentido, mas é exatamente assim que começa o sucesso, pensar diferente<p>
+      <p>eu possuia um servidor (Bilhar Lab) que não era nada demais, era apenas uma comunidade de "interação" sobre 2 temas que eu gostava na época: comunidades e bots, esqueci de comentar esse ponto, um erro que eu cometia ao criar comunidades é abordar assuntos que pessoalmente não gostava, um exemplo, se eu gosto de anime e eu vou abrir um servidor de... Marketing, vai fazer sentido? Eu vou me sentir confortável de abordar esse assunto na minha própia comunidade? Eu vou saber engajar o servidor sem eu gostar, (saber é algo diferente)?<p>
+      <p>O que eu fiz naquele servidor (Bilhar Lab), é criar a partir de dois assuntos que eu gostava muito, ainda gosto inclusive, depois que eu escolhi os dois assuntos principais que eu gostava e estava disposto a engajar, idealizar atualizações, eu praticamente já tinha começado o caminho do sucesso<p>
+      <p>quando eu já tinha aqueles assuntos em mão, se me fez mais fácil pensar: "o que eu posso fazer que diferencie o servidor do fulaninho que aborda esses dois assuntos com 5000 membros do meu com 10 membros"? Foi ali que começou a me vir muitas ideias, eventos, atualizações que me fizeram diferenciar o meu servidor de servidores que abordavam do mesmo assunto<p>
+      <p>quando se fala inovar, no meu pensamento não é só criar algo do zero, algo que ninguém nunca criou, pra mim a melhor forma é fazer diferente do da maioria, um exemplo, se todo mundo faz as atualizações com aqueles textos longos, você pode obtar por algo mais diferente: um vídeo curto explicando as atualizações e notícias do servidor, é algo que é raro de se ver e ao mesmo tempo não vai ser estranho pras pessoas, acho que esse exemplo explica exatamente como vejo a inovação<p>
+      <p>vou ir concluindo porque acho que já passou quase 10 linhas de código só escrevendo isso, mas é algo que eu queria compartilhar com você, seja lá quem estiver lendo isso, e ao  mesmo tempo te agradecer por ler isso, espero que tenha entendido o meu ponto de vista... :)<p>
+    `
+  },
+  {
+    id: "sites",
+    title: "Sites",
+    date: "16 de Abril",
+    content: `
+      <p>Estava pensando em estudar mais a profundo html, e outras linguagens de programação para criar sites, tenho umas ideias de sites que dariam bom</p>
+      <p>pior que html é tipo lógica, quando tu vai aprendendo as funções tudo se torna mais fácil, dá pra pegar o jeito com tutoriais e na prática principalmente</p>
+      <p>vou anotar as minhas ideias e vou ir postando e ir melhorando esse site<p>
+    `
+  },
+  {
+    id: "teste",
+    title: "TESTANDOOOOOOOOOOOOOOOOOO",
+    date: "16 de Abril",
+    content: `
+      <p>testandooooooooooooooooooooooooooooooooooo</p>
+      <p>agora eu consigo colocar pagina individual 😱</p>
+    `
+  }
+];
+
+// tema
+if(localStorage.getItem('dark')==='1'){
+  document.body.classList.add('dark');
+}
+
+function updateIcon(){
+  const icon = document.getElementById('themeIcon');
+  icon.innerHTML = document.body.classList.contains('dark') ? sunIcon : moonIcon;
+}
+
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  localStorage.setItem('dark', document.body.classList.contains('dark')?'1':'0');
+  updateIcon();
+}
+
 function renderHome(){
   const el = document.getElementById('home');
   document.getElementById('post').style.display='none';
@@ -42,3 +186,29 @@ function renderHome(){
     `).join('')}
   `;
 }
+
+function openPost(id){
+  const p = posts.find(x=>x.id===id);
+  if(!p) return;
+
+  const el = document.getElementById('post');
+  document.getElementById('home').style.display='none';
+  el.style.display='block';
+
+  el.innerHTML = `
+    <div class="back" onclick="goHome()">← voltar</div>
+    <h2>${p.title}</h2>
+    <div class="post-date">${p.date}</div>
+    <div>${p.content}</div>
+  `;
+}
+
+function goHome(){ renderHome(); }
+
+renderHome();
+updateIcon();
+
+</script>
+
+</body>
+</html>
