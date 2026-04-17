@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meu Blog</title>
+<title>#XCriaUmSite</title>
 <style>
 body{font-family:Arial;max-width:700px;margin:20px auto;padding:10px;background:#fff;color:#000;transition:0.2s}
 body.dark{background:#111;color:#eee}
@@ -11,7 +11,7 @@ h1{font-size:22px}
 nav{margin-bottom:15px;display:flex;justify-content:space-between;align-items:center}
 nav button{cursor:pointer}
 
-/* intro layout */
+/* Linha da Introdução */
 .intro{display:flex;gap:15px;align-items:flex-start;margin-bottom:20px}
 .profile-img{width:150px;border-radius:6px}
 .intro-content{flex:1}
@@ -42,7 +42,7 @@ body.dark .back{color:#7af}
 </head>
 <body>
 
-<h1 onclick="goHome()" style="cursor:pointer">inicio</h1>
+<h1 onclick="goHome()" style="cursor:pointer">/#XCriaUmSite</h1>
 
 <nav>
   <div></div>
@@ -53,7 +53,7 @@ body.dark .back{color:#7af}
 <div id="post" style="display:none"></div>
 
 <script>
-// 👇 POSTS
+// Meus posts
 const posts = [
   {
     id: "primeiro-post",
@@ -66,7 +66,7 @@ const posts = [
   }
 ];
 
-// 🌙 modo escuro
+// Tema do site
 if(localStorage.getItem('dark')==='1') document.body.classList.add('dark');
 function toggleDark(){
   document.body.classList.toggle('dark');
@@ -82,14 +82,14 @@ function renderHome(){
     <div class="intro">
       <img class="profile-img" src="perfil.png">
       <div class="intro-content">
-        <div class="intro-title">sobre mim</div>
+        <div class="intro-title">O que é esse site?</div>
         <div class="intro-text">
-          <p>sou o jensen, curto criar coisas na internet.</p>
-          <p>esse blog é tipo um espaço pra ideias, testes e projetos.</p>
+          <p>Oi meu nome é xMqR e esse é o meu site :D</p>
+          <p>estou aprendendo a criar sites, fiz esse com ajuda de tutoriais e IA, provavelmente eu exclua esse site</p>
         </div>
 
         <div class="links">
-          <a class="link" href="https://bit.ly/xmqr" target="_blank">
+          <a class="link" href="Portfólio" target="_blank">
             <span class="icon">
               <svg viewBox="0 0 24 24"><path d="M12 2L2 7v7c0 5 4 9 10 9s10-4 10-9V7l-10-5z"/></svg>
             </span>
@@ -100,7 +100,7 @@ function renderHome(){
             <span class="icon">
               <svg viewBox="0 0 24 24"><path d="M20 4a16 16 0 0 0-4-1l-.2.4a15 15 0 0 0-7.6 0L8 3a16 16 0 0 0-4 1C1 9 1 14 1 14a16 16 0 0 0 5 5l.4-.6a10 10 0 0 1-2.2-1.1l.5-.4c1.5.7 3.2 1.1 5.3 1.1s3.8-.4 5.3-1.1l.5.4c-.7.5-1.5.9-2.2 1.1l.4.6a16 16 0 0 0 5-5s0-5-3-10zM9.5 13.5c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5S11 11.2 11 12s-.7 1.5-1.5 1.5zm5 0c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5S16 11.2 16 12s-.7 1.5-1.5 1.5z"/></svg>
             </span>
-            discord
+            Discord
           </a>
         </div>
       </div>
