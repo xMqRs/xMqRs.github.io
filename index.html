@@ -4,15 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>#XCriaUmSite</title>
-
-   <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H87XQHDNTQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);} 
-  gtag('js', new Date());
-  gtag('config', 'G-H87XQHDNTQ');
-</script>
   
 <style>
 body{font-family:Arial;max-width:700px;margin:20px auto;padding:10px;background:#fff;color:#000;transition:0.2s}
@@ -246,14 +237,6 @@ function openPost(id){
   const p = posts.find(x=>x.id===id);
   if(!p) return;
 
-  
-  if (typeof gtag === 'function') {
-  gtag('event', 'open_post', {
-    post_id: id,
-    post_title: p.title
-  });
-}
-
   const el = document.getElementById('post');
   document.getElementById('home').style.display='none';
   el.style.display='block';
@@ -265,12 +248,13 @@ function openPost(id){
     <div>${p.content}</div>
   `;
 }
-  
+
+function goHome(){ renderHome(); }
+
 renderHome();
 updateIcon();
-</script>
-  
 
-  
+</script>
+
 </body>
 </html>
