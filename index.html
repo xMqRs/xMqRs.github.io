@@ -4,17 +4,64 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>#XCriaUmSite</title>
-
-   <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H87XQHDNTQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);} 
-  gtag('js', new Date());
-  gtag('config', 'G-H87XQHDNTQ');
-</script>
   
 <style>
+   .projects-popup{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  width:260px;
+  z-index:999;
+}
+
+.project-bar{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px;
+  margin-top:8px;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.2s;
+  background:#f5f5f5;
+  border:1px solid #e0e0e0;
+}
+
+.project-bar:hover{
+  transform:scale(1.03);
+}
+
+body.dark .project-bar{
+  background:#1a1a1a;
+  border-color:#333;
+}
+
+.project-bar img{
+  width:36px;
+  height:36px;
+  border-radius:6px;
+  object-fit:cover;
+}
+
+.project-text{
+  display:flex;
+  flex-direction:column;
+}
+
+.project-title{
+  font-size:13px;
+  font-weight:bold;
+}
+
+.project-desc{
+  font-size:11px;
+  color:#777;
+}
+
+body.dark .project-desc{
+  color:#aaa;
+}
+   
 body{font-family:Arial;max-width:700px;margin:20px auto;padding:10px;background:#fff;color:#000;transition:0.2s}
 body.dark{background:#111;color:#eee}
 h1{font-size:22px}
@@ -80,8 +127,21 @@ body.dark .back{color:#7af}
 
 <div id="home"></div>
 <div id="post" style="display:none"></div>
-
+<div id="projectsPopup" class="projects-popup"></div>
 <script>
+   function renderProjectsPopup(){
+  const el = document.getElementById('projectsPopup');
+
+  el.innerHTML = projects.map(p=>`
+    <div class="project-bar" onclick="window.open('${p.link}', '_blank')">
+      <img src="${p.image}">
+      <div class="project-text">
+        <div class="project-title">${p.title}</div>
+        <div class="project-desc">${p.desc}</div>
+      </div>
+    </div>
+  `).join('');
+}
 
 // icones do tema claro e oscuro
 const sunIcon = `
@@ -91,6 +151,21 @@ const sunIcon = `
 const moonIcon = `
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon-icon lucide-moon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
 `;
+   
+const projects = [
+  {
+    title: "Bilhar Lab",
+    desc: "Comunidades e bots, simples assim.",
+    image: "https://via.placeholder.com/80",
+    link: "https://discord.gg/seulink"
+  },
+  {
+    title: "Meu Bot",
+    desc: "Um bot simples e engraçado.",
+    image: "https://via.placeholder.com/80",
+    link: "https://discord.gg/outrolink"
+  }
+];
 
 // meus posts
 const posts = [
@@ -255,6 +330,7 @@ function openPost(id){
 function goHome(){ renderHome(); }
 
 renderHome();
+renderProjectsPopup();
 updateIcon();
 
 </script>
