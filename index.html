@@ -65,46 +65,6 @@ body.dark .post-title{color:#7af}
 body.dark .post-date{color:#aaa}
 .back{cursor:pointer;color:#06c;font-size:13px}
 body.dark .back{color:#7af}
-   .project-bar{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:10px;
-  margin-bottom:8px;
-  border:1px solid #ccc;
-  border-radius:6px;
-  cursor:pointer;
-  transition:0.15s;
-}
-
-.project-bar:hover{
-  transform:scale(1.02);
-}
-
-body.dark .project-bar{
-  border-color:#444;
-}
-
-.project-bar img{
-  width:40px;
-  height:40px;
-  border-radius:4px;
-  object-fit:cover;
-}
-
-.project-text{
-  display:flex;
-  flex-direction:column;
-}
-
-.project-desc{
-  font-size:12px;
-  color:#777;
-}
-
-body.dark .project-desc{
-  color:#aaa;
-}
 </style>
 </head>
 <body>
@@ -132,15 +92,6 @@ const moonIcon = `
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon-icon lucide-moon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
 `;
 
-   const projects = [
-  {
-    title: "Bilhar Lab",
-    desc: "Comunidades e bots, simples assim.",
-    image: "https://via.placeholder.com/80",
-    link: "https://discord.gg/seulink"
-  }
-];
-   
 // meus posts
 const posts = [
    {
@@ -273,19 +224,7 @@ function renderHome(){
     </div>
 
     <hr class="separator">
-<div class="section-title">Projetos Ativos</div>
 
-${projects.map(p=>`
-  <div class="project-bar" onclick="window.open('${p.link}', '_blank')">
-    <img src="${p.image}">
-    <div class="project-text">
-      <div class="project-title">${p.title}</div>
-      <div class="project-desc">${p.desc}</div>
-    </div>
-  </div>
-`).join('')}
-
-<hr class="separator">
     <div class="section-title">Postagens</div>
 
     ${posts.map(p=>`
