@@ -1,2 +1,2 @@
 # xMqRs.github.io
-Meu primeiro site :)
+Buenos dias, este é o meu primeiro site, estou criando apenas por diversão e para tentar aprender mais o conceito de criar sites, estou usando html e css, estou criando com ajuda de tutoriais do YouTube, amigos e aprendendo funções com inteligência artificial, aqui eu posto tudo o que eu penso e a minha opinião sobre diferentes assuntos, o site pode conter erros (meio óbvio) e se tiver apenas ignore-os, provavelmente eu os perceba depois... vale ressaltar que eu não sigo muito bem as regras de gramática, mas a mensagem que eu quero passar pode ser muito óbvia, se puder deixe a sua estrelinha, vai me animar a criar mais sites aleatórios :D
